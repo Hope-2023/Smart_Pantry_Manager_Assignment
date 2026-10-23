@@ -1,0 +1,83 @@
+Smart Pantry Manager
+
+A Java-based Android mobile application designed to track leftover pantry ingredients and suggest recipes based strictly on available inventory to minimize domestic food waste.
+
+📌 Project Overview
+
+The Smart Pantry Manager is an intuitive mobile application developed as part of the Mobile App Development 700 practical assessment. The application empowers users to manage their kitchen inventory (Pantry Items) and automatically match those items against a pre-loaded library of 15+ recipes using a Strict-Matching Algorithm.
+
+Core Features
+
+Full CRUD Pantry Management: Create, Read, Update, and Delete pantry items with details including ingredient name, quantity, unit of measurement, and optional expiry dates.
+
+Strict Recipe Matching Algorithm: Evaluates pantry inventory against recipe requirements. A recipe is only recommended if 100% of its required ingredients are present in sufficient quantities.
+
+Dynamic List Views: Built using ListView and RecyclerView bound directly to a local SQLite database for real-time rendering.
+
+Recipe Detail Screen: Displays step-by-step cooking instructions and complete ingredient lists for selected recipes.
+
+User Settings: Screen for managing preferences and system properties.
+
+Empty State Feedback: Friendly user messaging when no recipes match current inventory levels.
+
+🛠️ Database Architecture Choice
+
+Database Option Selected: Local SQLite Persistence (SQLiteOpenHelper)
+
+Justification
+
+Offline Availability & Fast Execution: Local SQLite allows instant query execution and offline availability without needing network calls or backend API endpoints.
+
+Reliable Data Persistence: Ensures all user pantry updates, edits, and deletions genuinely persist across application lifecycle events and device restarts.
+
+Structured Query Language: Simplifies complex relational joins and string-matching queries required to execute the strict ingredient matching logic efficiently.
+
+📱 Application Architecture & Layout Structure
+
+The application follows a 4+ Screen Architecture using Android Activities connected via Intent objects:
+
+MainActivity (activity_main.xml): Displays the main pantry list, quick action buttons (+ Add Item, Recipes, Settings), and handles empty state indicators.
+
+AddEditIngredientActivity (activity_add_edit_ingredient.xml): Handles form input validation for creating new pantry items or editing/deleting existing entries.
+
+SuggestedRecipesActivity (activity_suggested_recipes.xml): Executes the strict-matching logic and displays qualifying recipes inside a RecyclerView.
+
+RecipeDetailActivity (activity_recipe_detail.xml): Renders full preparation instructions and required ingredient lists.
+
+SettingsActivity (activity_settings.xml): Provides user configuration controls.
+
+⚙️ Setup and Installation Instructions
+
+Prerequisites
+
+Android Studio: Ladybug (2024.2.1) or newer.
+
+JDK: Java Development Kit 11 or higher.
+
+Android SDK: API Level 34 (Android 14.0) target SDK.
+
+Testing Device: Android Virtual Device (AVD - e.g., Pixel 7 Pro running API 33/34) or a physical Android phone with USB Debugging enabled.
+
+Running the Project
+
+Clone the Repository:
+
+git clone https://github.com/Hope-2023/Smart_Pantry_Manager_Assignment.git
+
+
+Open in Android Studio:
+
+Launch Android Studio and click Open.
+
+Navigate to the cloned project folder and select it.
+
+Allow Gradle to sync all dependencies automatically.
+
+Build & Run:
+
+Select your target device (Emulator or Connected Physical Device) from the top toolbar dropdown.
+
+Click the green Run 'app' button (Shift + F10).
+
+The SQLite database will automatically create tables and seed 15 pre-loaded recipes upon the first run.
+
